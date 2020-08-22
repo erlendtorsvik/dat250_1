@@ -2,7 +2,7 @@
 There were no technical problems during the installation of any of the software. 
 I already had an updated JDK and IDE (IntelliJ), so i only had to download and install Maven and the Git client. 
 
-I have used IntelliJ for quite som time, so i am confident it works the way it should.
+I have used IntelliJ for quite some time, so i am confident it works the way it should.
 As for the JDK, Maven and Git, i looked up various tutorials and double checked if everything was behaving as expected.
 
 ## Problems
