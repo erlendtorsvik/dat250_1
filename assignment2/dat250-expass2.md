@@ -4,6 +4,7 @@ There were few to no issues during during the installation of the JPA.
 
 # Inspecting the database
 I inspected the database using ij derby. 
+
 ![Image](https://github.com/erlendtorsvik/dat250_1/blob/master/assignment2/databaseP.PNG)
 
 # Pending issues
