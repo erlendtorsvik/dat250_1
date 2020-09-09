@@ -12,11 +12,11 @@ import javax.persistence.*;
 public class Bank {
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
-	private String id;
+	private Long id;
 	private String name;
 	
-	@OnetoMany
+	@OneToMany
 	@JoinColumn
-	private List<Creditcard> c;
+	private List<CreditCard> creditcard;
 
 }

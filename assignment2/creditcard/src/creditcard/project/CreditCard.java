@@ -8,15 +8,15 @@ import lombok.Data;
 public class CreditCard {
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
-	private String id;
+	private Long id;
 	private int number;
 	private int balance;
 	private int limit;
 	
-	@ManytoOne
-	private Bank b;
+	@ManyToOne
+	private Bank banks;
 	
-	@OnetoOne
-	private Pincode pin;
+	@OneToOne
+	private PinCode pin;
 
 }

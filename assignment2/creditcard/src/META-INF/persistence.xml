@@ -5,11 +5,11 @@
     <persistence-unit name="creditcard" transaction-type="RESOURCE_LOCAL">
 
 
-        <class>creditcard.jpa.main.Person</class>
-        <class>creditcard.jpa.main.Bank</class>
-        <class>creditcard.jpa.main.CreditCard</class>
-        <class>creditcard.jpa.main.Address</class>
-        <class>creditcard.jpa.main.PinCode</class>
+        <class>creditcard.project.Person</class>
+        <class>creditcard.project.Bank</class>
+        <class>creditcard.project.CreditCard</class>
+        <class>creditcard.project.Address</class>
+        <class>creditcard.project.PinCode</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />

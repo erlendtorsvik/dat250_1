@@ -1,10 +1,8 @@
 package creditcard.project;
-import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.Query;
 
 public class Main {
 	private static final String PERSISTENCE_UNIT_NAME = "creditcard";
@@ -16,9 +14,9 @@ public class Main {
          
         
         em.getTransaction().begin();
-        Person p = new Person();
-        p.setFirstName("Erlend");
-        em.persist(p);
+        Person person = new Person();
+        person.setFirstName("Erlend");
+        em.persist(person);
         em.getTransaction().commit();
         
         

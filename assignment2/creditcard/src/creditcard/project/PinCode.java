@@ -10,7 +10,7 @@ import lombok.Data;
 public class PinCode {
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
-	private String id;
+	private Long id;
 	private String pin;
 	private int count;
 
