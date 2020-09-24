@@ -9,5 +9,12 @@ public class TodoDAO {
     public Todo getTodo(long id){
         return null;
     }
-    
+
+    public void updateTodo(Todo todo){
+
+    }
+
+    public void deleteTodo(long id){
+        
+    }
 }
