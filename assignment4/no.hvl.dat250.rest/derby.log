@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Fri Sep 25 01:18:33 CEST 2020:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0174-c269-4896-00000ed11b28 
+Sat Sep 26 13:06:25 CEST 2020:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0174-ca17-b644-00000ef80330 
 on database directory C:\Apache\db-derby-10.15.2.0-bin\database\expass4 with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@2626b418 
 Loaded from file:/C:/Users/Erlend/Documents/libs/derby.jar
 java.vendor=Oracle Corporation

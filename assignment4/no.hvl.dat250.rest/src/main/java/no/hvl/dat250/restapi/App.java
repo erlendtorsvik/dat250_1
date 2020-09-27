@@ -26,13 +26,11 @@ public class App {
         });
 
         post("/todos", (request, response) -> {
-            gson = new Gson();
             todo = gson.fromJson(request.body(), Todo.class);
             tDao.addTodo(todo);
             return todo.toJson();
         });
         get("/todos", (request, response) -> {
-            gson = new Gson();
             List <Todo> todo = tDao.getTodo();
             return gson.toJson(todo.toArray());
         });
@@ -41,7 +39,6 @@ public class App {
             return todo.toJson();
         });
         put("/todos", (request, response) -> {
-            gson = new Gson();
             todo = gson.fromJson(request.body(), Todo.class);
             tDao.updateTodo(todo);
             return todo.toJson();
