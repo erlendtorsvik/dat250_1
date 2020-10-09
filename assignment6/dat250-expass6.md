@@ -6,3 +6,7 @@ I had no technical issues during the experiments.
 
 # Experiment 2
 [Code]()
+
+
+# Pending issues
+Got a couple of compiler issues with the second experiment.
