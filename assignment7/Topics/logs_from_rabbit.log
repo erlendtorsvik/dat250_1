@@ -1,0 +1,42 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.example:pubsub:jar:1.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 12, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] -------------------------< org.example:pubsub >-------------------------
+[INFO] Building pubsub 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec-maven-plugin:3.0.0:java (default-cli) @ pubsub ---
+[WARNING] 
+java.lang.NoClassDefFoundError: ReceiveLogs (wrong name: Receivelogs)
+    at java.lang.ClassLoader.defineClass1 (Native Method)
+    at java.lang.ClassLoader.defineClass (ClassLoader.java:1017)
+    at java.security.SecureClassLoader.defineClass (SecureClassLoader.java:151)
+    at java.net.URLClassLoader.defineClass (URLClassLoader.java:514)
+    at java.net.URLClassLoader$1.run (URLClassLoader.java:422)
+    at java.net.URLClassLoader$1.run (URLClassLoader.java:416)
+    at java.security.AccessController.doPrivileged (AccessController.java:691)
+    at java.net.URLClassLoader.findClass (URLClassLoader.java:415)
+    at java.lang.ClassLoader.loadClass (ClassLoader.java:589)
+    at java.lang.ClassLoader.loadClass (ClassLoader.java:522)
+    at org.codehaus.mojo.exec.ExecJavaMojo$1.run (ExecJavaMojo.java:246)
+    at java.lang.Thread.run (Thread.java:832)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.507 s
+[INFO] Finished at: 2020-10-16T08:13:14+02:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:3.0.0:java (default-cli) on project pubsub: An exception occured while executing the Java class. ReceiveLogs (wrong name: Receivelogs) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
