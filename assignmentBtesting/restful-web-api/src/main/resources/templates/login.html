@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8" />
+<title>Login Screen</title>
+</head>
+<body>
+	<form name = "login" th:action = "@{/login}" method = 'post'>
+		<h3>Login:</h3>
+        <div th:if="${param.error}" class="alert alert-error">    
+            Invalid username and password.
+        </div>
+        <div th:if="${param.logout}" class="alert alert-success"> 
+            You have been logged out.
+        </div>
+		User Name:<input type="text" name="uname"><br>
+		Password:<input type="password" name="password"><br><br>
+		<input type="submit" name="submit">
+		<p> Register New User <a th:href="@{/register}">here</a>
+	</form>
+</body>
