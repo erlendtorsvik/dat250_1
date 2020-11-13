@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'poetsenoneregular';
+    src: url('/fonts/poetsenone-regularplayidleheroes.com-webfont.woff2') format('woff2'),
+         url('/fonts/poetsenone-regularplayidleheroes.com-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0 auto;
+    max-width: 69em;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+}
+table, th, td {
+    border: 1px solid black;
+    padding: 0.4em;
+}
+
+th {
+    background-color: lightgray;
+}
+
+* {
+    font-family: 'poetsenoneregular';
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+input[type=button], [type=submit], .login-button, button{
+    border: none;
+    color: white;
+    display: inline-block;
+    text-decoration: none;
+    background-color: #008CBA;
+    padding: 0.3em 1em 0.3em 1em;
+}
+
+input[type=button]:hover, [type=submit]:hover, .login-button:hover, [id$="link"]:hover, button:hover{
+    background-color: #00698b;
+}
+
+[id$="link"]{
+    border: none;
+    color: white;
+    text-decoration: none;
+    background-color: #008CBA;
+    padding: 0.3em 1em 0.3em 1em;
+}
+
+#welcome-link {
+    padding: 0.1em 0.4em 0.1em 0.4em;
+}
+
+.name {
+    float: right;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.block {
+    float:left;
+    padding-left:20px;
+}
+
+.th-hidden {
+    visibility: hidden;
+}
+
+#td-hidden {
+    border: hidden;
+}
+
+#td-hidden-border {
+    border: hidden;
+    border-left: 1px;
+}
+
+.message {
+    padding-left: 20px;
+}

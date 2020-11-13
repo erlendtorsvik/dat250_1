@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Create Poll</title>
+	<link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+
+<body>
+	<div class="name" , sec:authorize="isAuthenticated()">
+		<p>Hello <span th:text="${name}"></span>!!</p>
+		<form>
+			<input type="button" name="Home" value="Home" onclick="window.location.href='/'">
+			<input type="button" name="logout" value="Log Out" onClick="window.location.href='/logout'">
+		</form><br>
+	</div>
+	<div class="block">
+		<form th:action="@{/pollAdd}" method="post">
+			<h3>Create Poll:</h3>
+			Name:<br><input type="text" name="name" maxlength="32"><br><br>
+			Description:<br><textarea name="description" rows="4"></textarea><br><br>
+			Status: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Public:
+			<br><select name="status">
+				<option value="past">Past</option>
+				<option value="present" selected>Present</option>
+				<option value="future">Future</option>
+			</select>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<select name="isPublic">
+				<option value="true">True</option>
+				<option value="false" selected>False</option>
+			</select><br><br>
+			<input type="submit" name="submit" value="Create Poll">
+		</form><br>
+	</div>
+	<div class=message>
+		<p><span class=message th:text="${message}"></span></p>
+	</div>
+</body>
+
+</html>

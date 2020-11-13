@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Polls</title>
+	<link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+
+<body>
+	<div class="name" , sec:authorize="isAuthenticated()">
+		<p>Hello <span th:text="${name}"></span>!!</p>
+		<form>
+			<input type="button" name="Home" value="Home" onclick="window.location.href='/'">
+			<input type="button" name="logout" value="Log Out" onClick="window.location.href='/logout'">
+		</form><br>
+	</div>
+	<div>
+		<div id="myPolls" class="block">
+			<h3>My Polls:</h3>
+			<table>
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Description</th>
+					<th>Red votes</th>
+					<th>Green votes</th>
+					<th>Status</th>
+					<th>Public</th>
+					<th class=th-hidden></th>
+					<th class=th-hidden></th>
+				</tr>
+				<tr th:each="poll : ${myPolls}">
+					<td th:text="${poll.pollID}"></td>
+					<td th:text="${poll.name}"></td>
+					<td th:text="${poll.description}"></td>
+					<td th:text="${poll.voteRed}"></td>
+					<td th:text="${poll.voteGreen}"></td>
+					<td th:text="${poll.status}"></td>
+					<td th:text="${poll.public}"></td>
+					<td id="td-hidden-border"><button th:onClick="'window.location.href= \''+
+							@{/polls/update/{pollID}(pollID=${poll.pollID})}+'\''">Edit</button>
+					</td>
+					<td id="td-hidden"><button th:onClick="'window.location.href= \''+
+						@{/polls/delete/{pollID}(pollID=${poll.pollID})}+'\''">Delete</button>
+					</td>
+				</tr>
+			</table><br>
+		</div>
+	</div>
+	<div class=message>
+		<p><span class=message th:text="${message}"></span></p>
+	</div>
+</body>
+
+</html>

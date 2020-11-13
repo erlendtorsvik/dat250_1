@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Welcome</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+
+<body>
+    <div class="block">
+        <h2>Welcome to our site <span th:text="${name}"></span>!!</h2>
+        Click <a id="welcome-link" th:href="@{/}">here</a> to continue
+    </div>
+</body>
+
+</html>

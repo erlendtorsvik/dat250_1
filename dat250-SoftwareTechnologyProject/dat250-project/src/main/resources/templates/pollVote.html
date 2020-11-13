@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Poll Vote</title>
+	<link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+
+<body>
+	<div class="name" , sec:authorize="isAuthenticated()">
+		<p>Hello <span th:text="${name}"></span>!!</p>
+		<form>
+			<input type="button" name="Home" value="Home" onclick="window.location.href='/'">
+			<input type="button" name="logout" value="Log Out" onClick="window.location.href='/logout'">
+		</form><br>
+	</div>
+
+	<div class="block">
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Status</th>
+				<th>Public</th>
+			</tr>
+			<tr>
+				<td th:text="${poll.name}"></td>
+				<td th:text="${poll.description}"></td>
+				<td th:text="${poll.status}"></td>
+				<td th:text="${poll.public}"></td>
+			</tr>
+		</table><br>
+
+		<form id="vote" th:action="@{/polls/{pollID}/setVotes(pollID=${poll.pollID})}" method="post">
+			<h3>Vote!</h3>
+			Red Vote<input type="radio" name="vote" value="voteRed"><input style="display:none;" type="radio" checked
+				name="vote" value="missing"><br>
+			Green Vote<input type="radio" name="vote" value="voteGreen"><br><br>
+			<input type="submit" name="submit">
+		</form><br>
+
+		<div sec:authorize="isAuthenticated()">
+			<p>Subscribe to this poll, to receive results when it closes!</p>
+			<form th:action="@{/poll/{pollID}/subscribe(pollID=${poll.pollID})}">
+				<input type="submit" name="subscribe" value="Subscribe">
+			</form><br>
+		</div>
+	</div>
+	<div class=message>
+		<p><span class=message th:text="${message}"></span></p>
+	</div>
+</body>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Update Poll</title>
+	<link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+
+<body>
+	<div class="name" , sec:authorize="isAuthenticated()">
+		<p>Hello <span th:text="${name}"></span>!!</p>
+		<form>
+			<input type="button" name="Home" value="Home" onclick="window.location.href='/'">
+			<input type="button" name="logout" value="Log Out" onClick="window.location.href='/logout'">
+		</form><br>
+	</div>
+	<div class="block">
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Status</th>
+				<th>Public</th>
+			</tr>
+			<tr>
+				<td th:text="${poll.name}"></td>
+				<td th:text="${poll.description}"></td>
+				<td th:text="${poll.status}"></td>
+				<td th:text="${poll.public}"></td>
+			</tr>
+
+		</table><br>
+		<form th:action="@{/polls/{pollID}(pollID=${poll.pollID})}" method="post">
+			<h3>Update Poll:</h3>
+			Name:<br><input type="text" th:value="${poll.name}" name="name" maxlength="32"><br><br>
+			Description:<br><textarea name="description" rows="4" th:text="${poll.description}"></textarea><br><br>
+			Status: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Public:
+			<br><select name="status">
+				<option value="past" th:selected="${poll.status eq 'past'}">Past</option>
+				<option value="present" th:selected="${poll.status eq 'present'}">Present</option>
+				<option value="future" th:selected="${poll.status eq 'future'}">Future</option>
+			</select>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<select name="isPublic">
+				<option value="true" th:selected="${poll.public}">True</option>
+				<option value="false" th:selected="${!poll.public}">False</option>
+			</select><br><br>
+			<input type="submit" name="submit" value="Update">
+		</form><br>
+	</div>
+	<div class=message>
+		<p><span class=message th:text="${message}"></span></p>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Register New User</title>
+	<link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+
+<body>
+	<form id="register" th:action="@{/userAdd}" method="post">
+		<h3>Register New User:</h3>
+		User Name:<input type="text" name="uname"><br>
+		First Name:<input type="text" name="fname"><br>
+		Last Name:<input type="text" name="lname"><br>
+		Email:<input type="email" name="email"><br>
+		Password:<input type="password" name="password"><br><br>
+		Admin:<select name="admin">
+			<option value="true">True</option>
+			<option value="false" selected>False</option>
+		</select><br>
+		<input type="submit" name="submit">
+	</form>
+</body>

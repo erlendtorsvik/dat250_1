@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Login</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+
+<body>
+    <div class="block">
+        <h3>Login with:</h3>
+        <span th:each="url : ${urls}">
+            <button th:text="${url.key}" th:onClick="'window.location.href= \''+ @{{url}(url=${url.value})}+'\''"></button>
+        </span>
+    </div>
+</body>

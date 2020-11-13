@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Login</title>
+	<link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+
+<body>
+	<form name="login" action="/polls" method='GET'>
+		<h3>Login:</h3>
+		User Name:<input type="text" name="uname"><br>
+		Password:<input type="password" name="password"><br><br>
+		<input type="submit" name="submit">
+		<input type="button" name="register" value="Register New User" onclick="window.location.href='/register'">
+	</form><br>
+</body>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Polls</title>
+	<link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+
+<body>
+	<div class="name" , sec:authorize="isAuthenticated()">
+		<p>Hello <span th:text="${name}"></span>!!</p>
+		<form>
+			<input type="button" name="results" value="Show results" onClick="window.location.href='/polls/results'">
+			<input type="button" name="My polls" value="My polls" onclick="window.location.href='/myPolls'">
+			<input type="button" name="logout" value="Log Out" onClick="window.location.href='/logout'">
+		</form><br>
+	</div>
+	<div class="name" sec:authorize="!isAuthenticated()">
+		<form>
+			<input type="button" name="logout" value="Log In" onClick="window.location.href='/oauth_login'">
+		</form><br>
+	</div>
+	<div>
+		<div id="search" class="block">
+			<form th:action="@{/polls}">
+				<h3>Search Polls:</h3>
+				Search:<input type="text" name="name"><br><br>
+				<input type="submit" name="submit" value="Search">
+			</form><br>
+
+			<table>
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Status</th>
+				</tr>
+				<tr th:each="poll : ${polls}">
+					<td th:text="${poll.pollID}"></td>
+					<td th:text="${poll.name}"></td>
+					<td th:text="${poll.status}"></td>
+				</tr>
+			</table>
+		</div>
+		<div id="enter" class="block">
+			<form th:action="@{/poll}">
+				<h3>Enter Poll:</h3>
+				Enter Poll ID:<input type="number" name="pollID" min=0><br><br>
+				<input type="submit" name="submit" value="Vote">
+			</form><br>
+			<form sec:authorize="isAuthenticated()">
+				<input type="button" name="create" value="Create New Poll" onclick="window.location.href='/pollCreate'">
+			</form><br>
+		</div>
+		<div class=message>
+			<p><span class=message th:utext="${message}"></span></p>
+		</div>
+	</div>
+</body>
